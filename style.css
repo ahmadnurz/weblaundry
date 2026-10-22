@@ -1,0 +1,84 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #334155;
+}
+
+.tracking-wide {
+  letter-spacing: 2px;
+}
+
+.text-shadow {
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= NAVBAR BLUR ================= */
+.custom-navbar {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* ================= HERO BACKGROUND ================= */
+.hero-section {
+  background: url("img/background.jpg") center center / cover no-repeat;
+  background-color: #0f172a; /* Fallback jika gambar belum ada */
+}
+
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.65) 100%);
+}
+
+/* ================= CARD HOVER EFFECT ================= */
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Modal Smooth Adjustments */
+#orderModal .modal-content {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ================= TIMELINE / PROGRESS TRACKER ================= */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% + 4px);
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.timeline-item.completed:not(:last-child)::after {
+  background-color: #0d6efd;
+}
+
+.timeline-item .timeline-icon {
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.completed .timeline-icon {
+  background-color: #0d6efd !important;
+}
+
+.timeline-item.active .timeline-icon {
+  background-color: #0dcaf0 !important;
+  box-shadow: 0 0 0 4px rgba(13, 202, 240, 0.25);
+}

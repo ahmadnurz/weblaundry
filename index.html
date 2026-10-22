@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry Azzam - Bersih, Rapi & Wangi</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark bg-opacity-75 custom-navbar py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold tracking-wide" href="#home">
+        <i class="bi bi-droplet-half text-primary me-2"></i>Laundry Azzam
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Buka navigasi">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tracking">Status</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lokasi">Lokasi</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TOAST NOTIFIKASI SUKSES -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="successToast" class="toast align-items-center text-white bg-success border-0 rounded-3 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <i class="bi bi-check-circle-fill fs-5"></i>
+          <span>Pesanan berhasil dikirim ke sistem! Kurir kami akan segera mengonfirmasi penjemputan.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1. BERANDA -->
+    <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center text-white min-vh-100 position-relative">
+      <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+      
+      <div class="container position-relative z-1 py-5">
+        <span class="badge bg-primary text-uppercase px-3 py-2 mb-3 tracking-wide">Laundry Azzam</span>
+        <h1 class="display-4 fw-extrabold mb-3 text-shadow">Lebih Bersih, Lebih Wangi, Lebih Praktis</h1>
+        <p class="lead text-light opacity-90 mx-auto mb-4" style="max-width: 650px;">
+          Solusi perawatan pakaian agar selalu bersih, wangi, dan rapi untuk mendukung rutinitas harianmu tanpa repot.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="#layanan" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm">Lihat Layanan</a>
+          <a href="#tracking" class="btn btn-outline-light btn-lg px-4 rounded-pill">Tracking Status</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. LAYANAN KAMI -->
+    <section id="layanan" class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <span class="text-primary fw-bold text-uppercase small tracking-wide">Layanan Kami</span>
+          <h2 class="fw-bold mt-1">Pilih Layanan Laundry</h2>
+          <p class="text-secondary">Pilih jenis layanan yang sesuai dengan kebutuhan pakaian harian Anda.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Kartu 1 -->
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-card">
+              <img src="img/card1.jpg" class="card-img-top object-fit-cover" height="210" alt="Layanan Cuci Kering" loading="lazy">
+              <div class="card-body d-flex flex-column p-4">
+                <h3 class="h5 fw-bold card-title">Cuci Kering</h3>
+                <p class="card-text text-secondary mb-4 flex-grow-1">
+                  Pencucian pakaian secara efisien dan higienis, pakaian bersih dan kering siap dilipat.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                  <span class="text-primary fw-bold fs-5">Rp 6.000 / kg</span>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 px-4 pb-4 pt-0">
+                <button type="button" class="btn btn-primary w-100 rounded-3 btn-pesan-modal" data-layanan="Cuci Kering" data-harga="Rp 6.000 / kg">
+                  Pesan Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu 2 -->
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-card">
+              <img src="img/card2.jpg" class="card-img-top object-fit-cover" height="210" alt="Layanan Cuci dan Setrika" loading="lazy">
+              <div class="card-body d-flex flex-column p-4">
+                <h3 class="h5 fw-bold card-title">Cuci + Setrika</h3>
+                <p class="card-text text-secondary mb-4 flex-grow-1">
+                  Perawatan lengkap: pencucian bersih ditambah setrika rapi dan wangi, siap langsung masuk lemari.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                  <span class="text-primary fw-bold fs-5">Rp 9.000 / kg</span>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 px-4 pb-4 pt-0">
+                <button type="button" class="btn btn-primary w-100 rounded-3 btn-pesan-modal" data-layanan="Cuci + Setrika" data-harga="Rp 9.000 / kg">
+                  Pesan Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu 3 -->
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-card">
+              <img src="img/card3.jpg" class="card-img-top object-fit-cover" height="210" alt="Cuci Satuan & Bedcover" loading="lazy">
+              <div class="card-body d-flex flex-column p-4">
+                <h3 class="h5 fw-bold card-title">Cuci Satuan & Bedcover</h3>
+                <p class="card-text text-secondary mb-4 flex-grow-1">
+                  Pencucian khusus untuk bedcover tebal, selimut, jaket, jas, serta perlengkapan tidur lainnya.
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                  <span class="text-primary fw-bold fs-5">Mulai Rp 25.000</span>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0 px-4 pb-4 pt-0">
+                <button type="button" class="btn btn-primary w-100 rounded-3 btn-pesan-modal" data-layanan="Cuci Satuan & Bedcover" data-harga="Mulai Rp 25.000">
+                  Pesan Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRACKING STATUS CUCIANMU -->
+    <section id="tracking" class="py-5 bg-white">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <span class="text-primary fw-bold text-uppercase small tracking-wide">Lacak Laundry</span>
+          <h2 class="fw-bold mt-1">Tracking Status Cucianmu</h2>
+          <p class="text-secondary">Masukkan nomor E-Faktur Anda untuk melihat status pengerjaan secara real-time.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            
+            <!-- VIEW 1: FORM INPUT E-FAKTUR -->
+            <div id="trackingFormView" class="card border-0 shadow-sm rounded-4 p-4 p-md-5 text-center bg-light">
+              
+              <form id="trackingForm">
+                <div class="mb-3">
+                  <input type="text" class="form-control form-control-lg text-center fs-6" id="noFaktur" placeholder="Masukan No E-Faktur Laundry di sini..." required>
+                </div>
+                <div id="trackingError" class="text-danger small mb-3 d-none"></div>
+
+                <button type="submit" class="btn btn-info text-white btn-lg w-100 rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2 fw-semibold">
+                  <i class="bi bi-search"></i> Lacak Laundry
+                </button>
+              </form>
+            </div>
+
+            <!-- VIEW 2: HALAMAN DETAIL & PROGRESS TRACKER (Hidden secara default) -->
+            <div id="trackingDetailView" class="card border-0 shadow-sm rounded-4 p-4 p-md-4 d-none">
+              <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                <div>
+                  <span class="badge bg-success mb-1">E-Faktur Ditemukan</span>
+                  <h4 class="fw-bold mb-0 text-dark">Nomor E-Faktur: <span id="resFaktur">1234</span></h4>
+                </div>
+                <button type="button" id="btnKembali" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                  <i class="bi bi-arrow-left me-1"></i> Kembali
+                </button>
+              </div>
+
+              <!-- Informasi Pelanggan -->
+              <div class="row g-3 mb-4 bg-light p-3 rounded-3">
+                <div class="col-sm-6">
+                  <small class="text-muted d-block">Nama Lengkap</small>
+                  <strong id="resNama" class="text-dark">Ahmad Nur Yulhaidir</strong>
+                </div>
+                <div class="col-sm-6">
+                  <small class="text-muted d-block">Nomor Telepon</small>
+                  <strong id="resHp" class="text-dark">082343273900</strong>
+                </div>
+                <div class="col-12">
+                  <small class="text-muted d-block">Alamat Pelanggan</small>
+                  <strong id="resAlamat" class="text-dark">Jl. Andi Pangeran 2 No. 12, Makassar</strong>
+                </div>
+                <div class="col-12">
+                  <small class="text-muted d-block">Catatan Laundry</small>
+                  <strong id="resCatatan" class="text-dark">Pakaian putih dipisah, gunakan detergen ekstra wangi.</strong>
+                </div>
+              </div>
+
+              <!-- Status Saat Ini -->
+              <div class="alert alert-primary d-flex align-items-center gap-2 mb-4" role="alert">
+                <i class="bi bi-info-circle-fill fs-5"></i>
+                <div>
+                  Status Saat Ini: <strong id="resStatusText">Pakaian sedang dicuci</strong>
+                </div>
+              </div>
+
+              <!-- Progress Tracker 7 Tahapan -->
+              <h5 class="fw-bold mb-3 fs-6 text-uppercase text-secondary tracking-wide">Tahapan Proses Pengerjaan</h5>
+              <div class="timeline-container ps-2">
+                
+                <!-- Tahap 1 -->
+                <div class="timeline-item d-flex gap-3 mb-3 position-relative" data-step="1">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">1. Pakaian sedang dijemput</h6>
+                    <small class="text-muted">Kurir menuju lokasi penjemputan.</small>
+                  </div>
+                </div>
+
+                <!-- Tahap 2 -->
+                <div class="timeline-item d-flex gap-3 mb-3 position-relative" data-step="2">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">2. Pakaian telah diterima di tempat laundry</h6>
+                    <small class="text-muted">Pakaian tiba di outlet dan siap disortir.</small>
+                  </div>
+                </div>
+
+                <!-- Tahap 3 -->
+                <div class="timeline-item d-flex gap-3 mb-3 position-relative" data-step="3">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">3. Pakaian sedang diproses</h6>
+                    <small class="text-muted">Pemeriksaan noda dan penimbangan berat.</small>
+                  </div>
+                </div>
+
+                <!-- Tahap 4 -->
+                <div class="timeline-item d-flex gap-3 mb-3 position-relative" data-step="4">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">4. Pakaian sedang dicuci</h6>
+                    <small class="text-muted">Pencucian higienis dengan mesin modern.</small>
+                  </div>
+                </div>
+
+                <!-- Tahap 5 -->
+                <div class="timeline-item d-flex gap-3 mb-3 position-relative" data-step="5">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">5. Pakaian sedang dikeringkan</h6>
+                    <small class="text-muted">Pengeringan optimal agar bebas lembap.</small>
+                  </div>
+                </div>
+
+                <!-- Tahap 6 -->
+                <div class="timeline-item d-flex gap-3 mb-3 position-relative" data-step="6">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">6. Pakaian sedang dipacking</h6>
+                    <small class="text-muted">Penyetrikaan rapi dan pengemasan plastik.</small>
+                  </div>
+                </div>
+
+                <!-- Tahap 7 -->
+                <div class="timeline-item d-flex gap-3 position-relative" data-step="7">
+                  <div class="timeline-icon rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 32px; height: 32px; background: #cbd5e1;">
+                    <i class="bi bi-check"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">7. Pakaian sedang diantar ke rumah pelanggan</h6>
+                    <small class="text-muted">Kurir dalam perjalanan pengantaran.</small>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TENTANG KAMI -->
+    <section id="tentang" class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="text-primary fw-bold text-uppercase small tracking-wide">Tentang Kami</span>
+            <h2 class="display-6 fw-bold mb-3 mt-1">Merawat Pakaian dengan Lebih Bersih & Praktis</h2>
+            <p class="text-secondary leading-relaxed">
+              Laundry Azzam hadir sebagai solusi perawatan pakaian keluarga Anda. Kami mengutamakan kebersihan, wangi yang tahan lama, dan kerapian cucian agar Anda dapat beraktivitas dengan nyaman.
+            </p>
+            <p class="text-secondary leading-relaxed">
+              Dengan detergen berkualitas dan mesin modern, kami siap melayani cuci kiloan harian hingga barang-barang khusus seperti bedcover.
+            </p>
+            <a href="#tracking" class="btn btn-primary px-4 py-2 rounded-3 mt-2">
+              <i class="bi bi-search me-2"></i>Tracking Status Cucian
+            </a>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-start gap-3 p-3 rounded-4 bg-white border border-light-subtle shadow-sm">
+                <div class="bg-primary text-white rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                  <i class="bi bi-stars fs-4"></i>
+                </div>
+                <div>
+                  <h3 class="h6 fw-bold mb-1">Kualitas Terjamin</h3>
+                  <p class="text-secondary small mb-0">Pencucian higienis dengan pewangi tahan lama dan hasil setrika rapi.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-4 bg-white border border-light-subtle shadow-sm">
+                <div class="bg-primary text-white rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                  <i class="bi bi-tags-fill fs-4"></i>
+                </div>
+                <div>
+                  <h3 class="h6 fw-bold mb-1">Harga Transparan</h3>
+                  <p class="text-secondary small mb-0">Daftar harga tertera jelas tanpa ada biaya tersembunyi.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-4 bg-white border border-light-subtle shadow-sm">
+                <div class="bg-primary text-white rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                  <i class="bi bi-truck fs-4"></i>
+                </div>
+                <div>
+                  <h3 class="h6 fw-bold mb-1">Layanan Antar-Jemput</h3>
+                  <p class="text-secondary small mb-0">Kurir kami siap menjemput dan mengantar cucian langsung ke rumah Anda.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. KONTAK -->
+    <section id="kontak" class="py-5 bg-white">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <span class="text-primary fw-bold text-uppercase small tracking-wide">Kontak Kami</span>
+          <h2 class="fw-bold mt-1">Hubungi Azzam Laundry</h2>
+          <p class="text-secondary">Silakan hubungi kami atau kunjungi outlet kami untuk informasi lebih lanjut.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-light">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-7">
+                  <h3 class="h4 fw-bold mb-3 text-dark">Azzam Laundry</h3>
+                  
+                  <div class="d-flex align-items-start gap-3 mb-3">
+                    <i class="bi bi-geo-alt-fill fs-5 text-primary mt-1"></i>
+                    <div>
+                      <strong class="d-block text-dark">Alamat:</strong>
+                      <span class="text-secondary small">Jl. Andi Pangeran Pettarani II No. 11, Tamamaung, Kecamatan Panakkukang, Kota Makassar, Sulawesi Selatan 90231.</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start gap-3 mb-3">
+                    <i class="bi bi-telephone-fill fs-5 text-primary mt-1"></i>
+                    <div>
+                      <strong class="d-block text-dark">Nomor Telepon / WhatsApp:</strong>
+                      <span class="text-secondary small">+62 821-9444-7778</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start gap-3">
+                    <i class="bi bi-clock-fill fs-5 text-primary mt-1"></i>
+                    <div>
+                      <strong class="d-block text-dark">Jam Operasional:</strong>
+                      <span class="text-secondary small">Setiap hari, pukul 08.00–22.00 WITA.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-5 text-md-end d-flex flex-column gap-3 justify-content-center">
+                  <a href="https://wa.me/6282194447778" target="_blank" class="btn btn-success btn-lg rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2 fw-semibold">
+                    <i class="bi bi-whatsapp fs-5"></i> Hubungi via WhatsApp
+                  </a>
+                  <a href="#lokasi" class="btn btn-outline-primary btn-lg rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2 fw-semibold">
+                    <i class="bi bi-map fs-5"></i> Lihat Lokasi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LOKASI -->
+    <section id="lokasi" class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="text-center mb-4">
+          <span class="text-primary fw-bold text-uppercase small tracking-wide">Lokasi Kami</span>
+          <h2 class="fw-bold mt-1">Temukan Laundry Azzam</h2>
+          <p class="text-secondary">Jl. Andi Pangeran Pettarani II No. 11, Tamamaung, Panakkukang, Makassar</p>
+        </div>
+
+        <div class="col-lg-10 mx-auto">
+          <div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border">
+            <iframe 
+              src="https://maps.google.com/maps?q=-5.1451522,119.440442&amp;z=18&amp;hl=id&amp;output=embed" 
+              title="Peta lokasi Laundry Azzam" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL PEMESANAN ANTAR JEMPUT -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow-lg overflow-hidden">
+        
+        <!-- Header Modal -->
+        <div class="modal-header bg-primary text-white border-0 py-3">
+          <h5 class="modal-title fw-bold" id="orderModalLabel">
+            <i class="bi bi-truck me-2"></i>Pemesanan Antar-Jemput Laundry
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Body Modal -->
+        <div class="modal-body p-4">
+          
+          <div class="alert alert-primary d-flex align-items-center gap-2 mb-4 rounded-3" role="alert">
+            <i class="bi bi-info-circle-fill fs-5"></i>
+            <div>
+              Layanan <strong><span id="modalLayananName">Cuci Kering</span></strong> (<span id="modalLayananHarga">Rp 6.000 / kg</span>). Isi alamat di bawah ini agar kurir kami dapat menjemput pakaian Anda.
+            </div>
+          </div>
+
+          <form id="orderForm">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="modalNama" class="form-label fw-semibold">Nama Lengkap <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="modalNama" placeholder="Masukkan nama Anda" required>
+              </div>
+              <div class="col-md-6">
+                <label for="modalHp" class="form-label fw-semibold">Nomor WhatsApp <span class="text-danger">*</span></label>
+                <input type="tel" class="form-control" id="modalHp" placeholder="08xxxxxxxxxx" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="modalAlamat" class="form-label fw-semibold">Alamat Penjemputan Lengkap <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="modalAlamat" rows="3" placeholder="Jl. Pahlawan No. 45, RT 02/RW 01, Dekat Patung Kuda..." required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="modalWaktuJemput" class="form-label fw-semibold">Jadwal Penjemputan</label>
+              <input type="datetime-local" class="form-control" id="modalWaktuJemput">
+            </div>
+
+            <div class="mb-4">
+              <label for="modalCatatan" class="form-label fw-semibold">Catatan Khusus (Opsional)</label>
+              <input type="text" class="form-control" id="modalCatatan" placeholder="Contoh: Pisahkan pakaian putih, atau jemput setelah jam 2 siang">
+            </div>
+
+            <div class="alert alert-light border rounded-3 small text-muted mb-4">
+              <i class="bi bi-calculator me-1"></i>
+              <strong>Catatan Biaya:</strong> Penimbangan berat cucian dan perhitungan total harga resmi akan dilakukan oleh kurir saat penjemputan di lokasi Anda.
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-secondary px-4 rounded-3" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary px-5 rounded-3 fw-bold" id="btnSubmitOrder">
+                <span class="spinner-border spinner-border-sm d-none me-1" id="submitSpinner" role="status" aria-hidden="true"></span>
+                <span id="btnSubmitText">PESAN</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-dark text-white text-center">
+    <div class="container">
+      <p class="fw-bold mb-1">Laundry Azzam</p>
+      <p class="small text-secondary mb-0">&copy; 2026 Laundry Azzam. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS Eksternal -->
+  <script src="script.js"></script>
+</body>
+
+</html>
